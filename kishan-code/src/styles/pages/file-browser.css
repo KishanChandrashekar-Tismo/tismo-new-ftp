@@ -1,0 +1,74 @@
+/* File Browser Page Styles */
+
+.file-browser-container {
+  width: 100%;
+  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin-bottom: 10px;
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.file-browser-animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.company-code-container {
+  display: flex;
+  align-items: center;
+  color: black;
+}
+
+.md-container {
+  width: 80%;
+  height: 60px;
+  margin: 0px 20px;
+}
+
+.directory-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0rem 2rem;
+  gap: 2rem; /* gap-2 */
+}
+
+.path-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0rem 2rem;
+  gap: 2rem; /* gap-2 */
+}
+
+.tables-container {
+  display: flex;
+  padding: 0rem 2rem;
+  gap: 1rem; /* gap-2 */
+}
+
+.action-container {
+  width: 15rem;
+  min-height: 550px;
+  border-radius: 1rem; /* Tailwind rounded-4xl */
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 8px 10px -6px rgba(0, 0, 0, 0.1); /* shadow-xl */
+  background-color: rgba(255, 255, 255, 0.3); /* bg-white/30 */
+  backdrop-filter: blur(16px); /* backdrop-blur-lg */
+  padding: 1rem; /* p-8 */
+}
+
+.documents-container {
+  display: flex;
+  flex: 1 1 0%;
+  border-radius: 1rem; /* Tailwind rounded-4xl */
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 8px 10px -6px rgba(0, 0, 0, 0.3); /* shadow-xl */
+  background-color: rgba(255, 255, 255, 0.3); /* bg-white/30 */
+  backdrop-filter: blur(16px); /* backdrop-blur-lg */
+  padding: 0.5rem 1rem;
+}

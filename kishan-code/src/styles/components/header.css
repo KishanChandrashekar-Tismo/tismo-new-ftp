@@ -1,0 +1,13 @@
+/* Header Component Styles */
+
+.header-div {
+  display: flex; /* flex */
+  justify-content: space-between; /* justify-between */
+  align-items: center; /* items-center */
+  padding: 1rem 2rem; /* p-4 */
+  width: 100%;
+  background-color: transparent; /* bg-gray-100 */
+
+  /* Dark mode */
+  /* You can scope this under a `.dark` body class if you have dark mode toggle */
+}

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { PathNode } from "@/lib/types";
 import Header from "@/components/Header";
 import * as api from "@/services/api";
@@ -10,6 +10,8 @@ import DirectorySelector from "@/components/DirectorySelector";
 import PathBar from "@/components/PathBar";
 import FileActions from "@/components/FileActions";
 import FileTable from "@/components/FileTable";
+
+import { getFileListTest } from "@/services/MockApi";
 
 export default function FileBrowser() {
   const [pathNodes, setPathNodes] = useState<PathNode[]>([]);
@@ -21,12 +23,15 @@ export default function FileBrowser() {
   const { token, logout } = useAuth();
   const [animateIn, setAnimateIn] = useState(false);
 
-  const fetchFiles = async () => {
+  const fetchFiles = useCallback(async () => {
     if (!token) return;
     setMessage("Fetching files...");
     try {
-      const files = await api.getFileList(currentFolder, token);
-      setPathNodes(files);
+      // const files = await api.getFileList(currentFolder, token);
+
+      const allFiles = await getFileListTest(currentFolder, token);
+      console.info(allFiles);
+      setPathNodes(allFiles);
       setMessage("");
     } catch (err) {
       console.error(err);
@@ -35,11 +40,11 @@ export default function FileBrowser() {
         logout();
       }
     }
-  };
+  }, [currentFolder, token, logout]);
 
   useEffect(() => {
     fetchFiles();
-  }, [currentFolder, token]);
+  }, [currentFolder, token, fetchFiles]);
 
   // Animate in on mount
   useEffect(() => {
@@ -159,7 +164,7 @@ export default function FileBrowser() {
           <br />
         </div>
         <div className="documents-container">
-          <FileTable />
+          <FileTable files={pathNodes} onSelect={handleSelect} />
         </div>
       </div>
     </div>

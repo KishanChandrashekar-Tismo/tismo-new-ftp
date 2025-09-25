@@ -1,0 +1,219 @@
+/* File Table Component Styles */
+
+.table-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.table thead tr {
+  border-bottom: 1px solid black;
+}
+
+.table thead th {
+  border-bottom: none; /* Remove individual th borders if any */
+  padding-bottom: 12px;
+}
+
+.table thead th:nth-child(1) {
+  width: 50%; /* Name column gets more space */
+}
+
+.table thead th:nth-child(2) {
+  width: 30%; /* Modified Date column */
+}
+
+.table thead th:nth-child(3) {
+  width: 20%; /* File Size column */
+}
+
+.table-body-container {
+  overflow-y: auto;
+  max-height: 500px; /* 10 rows × 50px = 500px */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.3) transparent;
+}
+
+.table-body-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.table-body-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.table-body-container::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+}
+
+.table-body-container .table {
+  margin: 0;
+}
+
+.file-row {
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  height: 50px;
+  max-height: 50px;
+  min-height: 50px;
+}
+
+.file-row td {
+  height: 50px;
+  max-height: 50px;
+  vertical-align: middle;
+  padding: 8px 10px;
+}
+
+.file-row td:nth-child(1) {
+  width: 50%; /* Name column gets more space */
+}
+
+.file-row td:nth-child(2) {
+  width: 30%; /* Modified Date column */
+}
+
+.file-row td:nth-child(3) {
+  width: 20%; /* File Size column */
+}
+
+.file-row:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.file-icon {
+  margin-right: 8px;
+  font-size: 16px;
+  display: inline-block;
+  min-width: 20px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 1;
+}
+
+.file-icon:before {
+  font-size: 16px;
+  vertical-align: middle;
+}
+
+/* Emoji icons don't need font families */
+.file-icon:not([class*="icon-"]) {
+  font-family: inherit;
+}
+
+.file-name {
+  vertical-align: middle;
+  margin-left: 4px;
+}
+
+/* Ensure file-icons fonts are loaded */
+.icon-file-text:before,
+.icon-file-code:before,
+.icon-file-image:before,
+.icon-file-pdf:before,
+.icon-folder:before {
+  font-family: "file-icons", "devopicons", "fontawesome", "octicons", "mfixx";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* File type specific icon colors (when using file-icons-js classes) */
+.icon-file-image {
+  color: #4caf50;
+}
+
+.icon-file-pdf {
+  color: #f44336;
+}
+
+.icon-file-word {
+  color: #2196f3;
+}
+
+.icon-file-excel {
+  color: #4caf50;
+}
+
+.icon-file-code {
+  color: #ff9800;
+}
+
+.icon-file-archive {
+  color: #9c27b0;
+}
+
+.icon-file-audio {
+  color: #e91e63;
+}
+
+.icon-file-video {
+  color: #ff5722;
+}
+
+.icon-folder,
+.icon-folder-o,
+.icon-folder-open,
+.icon-file-directory {
+  color: #ffc107;
+}
+
+/* Specific folder type colors */
+.icon-node-modules {
+  color: #68d391; /* Green for node_modules */
+}
+
+.icon-folder-src,
+.icon-folder-source {
+  color: #4299e1; /* Blue for source folders */
+}
+
+.icon-folder-public,
+.icon-folder-assets {
+  color: #ed8936; /* Orange for public/assets folders */
+}
+
+.icon-folder-build,
+.icon-folder-dist {
+  color: #9f7aea; /* Purple for build folders */
+}
+
+.icon-folder-test,
+.icon-folder-spec {
+  color: #f56565; /* Red for test folders */
+}
+
+.icon-folder-config,
+.icon-folder-settings {
+  color: #38b2ac; /* Teal for config folders */
+}
+
+/* Fallback folder icon definitions */
+.icon-folder-o:before {
+  content: "\f114"; /* FontAwesome folder-o icon */
+}
+
+.icon-folder:before {
+  content: "\f07b"; /* FontAwesome folder icon */
+}
+
+.icon-file-directory:before {
+  content: "\f07b"; /* Default folder icon */
+}
+
+.icon-file-text {
+  color: #757575;
+}
+
+.empty-message {
+  text-align: center;
+  color: #666;
+  font-style: italic;
+  padding: 20px;
+}

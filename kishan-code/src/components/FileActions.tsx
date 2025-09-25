@@ -14,8 +14,10 @@ import deleteActiveIcon from "@/assets/delete_active.png";
 export default function FileActions() {
   return (
     <div className="action-panel">
-      <h3 className="black-text">Actions</h3>
-
+      <h3 className="black-text" style={{ fontSize: "18px" }}>
+        Actions
+      </h3>
+      <hr className="table-hr" />
       {/* New File */}
       <button className="new-button-radio">
         <Image

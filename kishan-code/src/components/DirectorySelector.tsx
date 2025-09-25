@@ -58,7 +58,7 @@ export default function DirectorySelector() {
             onClick={() => setSelected("tismo")}
             title="Tismo Directory"
           >
-            <Image src={db} alt="db" width={40} />
+            <Image src={db} alt="db" width={25} />
             <span className="button-text">Tismo</span>
           </button>
 
@@ -67,7 +67,7 @@ export default function DirectorySelector() {
             onClick={() => setSelected("client")}
             title="Client Directory"
           >
-            <Image src={db} alt="db" width={40} />
+            <Image src={db} alt="db" width={25} />
             <span className="button-text">{clientName}</span>
           </button>
         </div>

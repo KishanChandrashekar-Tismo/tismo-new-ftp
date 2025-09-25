@@ -1,0 +1,178 @@
+/* Login Page Styles */
+
+.login-card {
+  width: 600px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 2rem; /* Tailwind rounded-4xl */
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 8px 10px -6px rgba(0, 0, 0, 0.1); /* shadow-xl */
+  background-color: rgba(255, 255, 255, 0.3); /* bg-white/30 */
+  backdrop-filter: blur(16px); /* backdrop-blur-lg */
+  padding: 2rem; /* p-8 */
+  border: 0px;
+
+  opacity: 0; /* Start invisible */
+  transform: translateY(20px); /* Slightly moved down */
+  animation: fadeInUp 1s ease-out forwards; /* Trigger animation */
+}
+
+/* Keyframes for fade and slide-up effect */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) translateY(0);
+  }
+}
+
+.logo {
+  height: 5rem; /* h-20 equivalent */
+}
+
+.tagline {
+  font-size: 0.75rem; /* text-xs */
+  font-weight: 600; /* font-semibold */
+  letter-spacing: 0.025em; /* tracking-wide */
+  margin-top: -0.5rem; /* -mt-2 */
+  text-align: center;
+}
+
+.title {
+  color: black;
+  margin: 0px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 40px;
+  letter-spacing: normal; /* Default spacing */
+  animation: letterSpacingExpand 1.5s ease-out forwards 0.2s;
+}
+
+.title-footer {
+  color: black;
+  margin: 0px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  letter-spacing: 0.4em;
+  position: absolute;
+  right: 25px;
+}
+
+.version-footer {
+  color: black;
+  margin: 0px;
+  text-align: center;
+  font-size: 10px;
+  letter-spacing: normal;
+  position: absolute;
+  left: 35px;
+}
+
+/* Keyframes for expanding letter spacing */
+@keyframes letterSpacingExpand {
+  0% {
+    letter-spacing: normal;
+  }
+  100% {
+    letter-spacing: 0.4em;
+  }
+}
+
+.horizontal-separator {
+  height: 1px;
+  width: 100%;
+  background-color: black; /* Tailwind's gray-300 */
+  margin-top: 20px;
+}
+
+.vertical-separator {
+  height: 30px;
+  width: 2px;
+  background-color: white; /* Tailwind's gray-300 */
+  margin: 10px 30px;
+}
+
+.input-title {
+  color: black;
+  margin: 0px;
+  padding-left: 15px;
+  text-align: left;
+  font-size: 17px;
+}
+
+.input-wrapper {
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto; /* centers horizontally */
+  max-width: 300px;
+  padding-left: 0;
+  padding-right: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* matches Tailwind's space-y-6 */
+}
+
+.input-box {
+  background-color: white;
+  border-radius: 100px;
+  padding: 10px 15px;
+  border: 0px;
+  font-size: 15px;
+  color: black;
+}
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px white inset !important; /* change background */
+  box-shadow: 0 0 0px 1000px white inset !important;
+  font-size: 15px !important;
+  -webkit-text-fill-color: #000 !important; /* text color */
+  transition: background-color 5000s ease-in-out 0s; /* avoid flash */
+}
+
+input:-webkit-autofill:focus {
+  font-size: 15px !important;
+  -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+  box-shadow: 0 0 0px 1000px white inset !important;
+  -webkit-text-fill-color: #000 !important;
+}
+
+.eye-button {
+  position: absolute;
+  bottom: 0.125rem; /* bottom-0.5 */
+  transform: translateY(50%); /* -translate-y-1/2 */
+  padding-left: 0.5rem; /* px-2 */
+  padding-right: 0.5rem; /* px-2 */
+  color: #6b7280; /* text-gray-500 */
+  cursor: pointer;
+  margin: -4px 0px;
+}
+
+.login-button {
+  cursor: pointer;
+  width: 33.3333%; /* w-2/6 */
+  display: block;
+  font-weight: 700;
+  font-size: 18px;
+  margin-left: auto;
+  margin-right: auto;
+  background-image: linear-gradient(180deg, #116ad5 0%, #09376f 100%);
+}
+
+.login-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  font-weight: 500;
+  width: 100%;
+  text-align: center;
+  font-size: 0.75rem; /* text-xs = 12px */
+  color: rgba(0, 0, 0, 0.7); /* text-black/70 = black with 70% opacity */
+}

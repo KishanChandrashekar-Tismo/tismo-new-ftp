@@ -1,0 +1,143 @@
+/* File Actions Component Styles */
+
+.action-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.action-panel .btn {
+  justify-content: flex-start;
+}
+
+.divider {
+  border: none;
+  border-bottom: 2px solid #ccc;
+  margin: 0.5rem 0;
+}
+
+.action-button-radio {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #000000;
+  font-weight: 800;
+  border-radius: 1rem;
+  padding: 10px 16px;
+  cursor: pointer;
+  font-size: 14px;
+  background-color: white; /* bg-white/30 */
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 8px 10px -6px rgba(0, 0, 0, 0.3); /* shadow-xl */
+  transition: transform 0.3s ease;
+}
+
+.action-button-radio:hover {
+  background-image: linear-gradient(180deg, #116ad5 0%, #09376f 100%);
+  transform: translateY(-4px);
+}
+
+.action-button-radio .icon.hover {
+  display: none;
+}
+
+.action-button-radio:hover .icon.default {
+  display: none;
+}
+
+.action-button-radio:hover .icon.hover {
+  display: inline;
+}
+
+.action-button-radio:hover .small-button-text {
+  color: #ffffff;
+}
+
+.delete-button-radio {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #000000;
+  font-weight: 800;
+  border-radius: 1rem;
+  padding: 10px 16px;
+  cursor: pointer;
+  font-size: 14px;
+  background-color: white; /* bg-white/30 */
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 8px 10px -6px rgba(0, 0, 0, 0.3); /* shadow-xl */
+  transition: transform 0.3s ease;
+}
+
+.delete-button-radio:hover {
+  background-image: linear-gradient(180deg, #a42320 0%, #3e0d0c 100%);
+  transform: translateY(-4px);
+}
+
+.delete-button-radio .icon.hover {
+  display: none;
+}
+
+.delete-button-radio:hover .icon.default {
+  display: none;
+}
+
+.delete-button-radio:hover .icon.hover {
+  display: inline;
+}
+
+.delete-button-radio:hover .small-button-text {
+  color: #ffffff;
+}
+
+/* New Button Radio (Yellow Gradient) */
+.new-button-radio {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #000000;
+  font-weight: 800;
+  border-radius: 1rem;
+  padding: 10px 16px;
+  cursor: pointer;
+  font-size: 14px;
+  background-color: white;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 8px 10px -6px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.new-button-radio:hover {
+  background-image: linear-gradient(180deg, #ffe259 0%, #b69838 100%);
+  /* yellow gradient */
+  transform: translateY(-4px);
+}
+
+.new-button-radio .icon.hover {
+  display: none;
+}
+
+.new-button-radio:hover .icon.default {
+  display: none;
+}
+
+.new-button-radio:hover .icon.hover {
+  display: inline;
+}
+
+.new-button-radio:hover .small-button-text {
+  color: #ffffff;
+}
+
+.small-button-text {
+  display: inline-flex;
+  align-items: center;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.button-text {
+  display: inline-flex;
+  align-items: center;
+  font-size: 20px;
+}
