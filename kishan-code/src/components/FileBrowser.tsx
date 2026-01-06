@@ -5,6 +5,7 @@ import { PathNode } from "@/lib/types";
 import Header from "@/components/Header";
 import * as api from "@/services/api";
 import { useAuth } from "@/contexts/AuthContext";
+import { useFolder } from "@/contexts/FolderContext";
 import { sanitizeFileName } from "@/lib/utils";
 import DirectorySelector from "@/components/DirectorySelector";
 import PathBar from "@/components/PathBar";
@@ -15,7 +16,7 @@ import { getFileListTest } from "@/services/MockApi";
 
 export default function FileBrowser() {
   const [pathNodes, setPathNodes] = useState<PathNode[]>([]);
-  const [currentFolder, setCurrentFolder] = useState("/");
+  const { currentFolder, setCurrentFolder } = useFolder();
   const [newFolderName, setNewFolderName] = useState("");
   const [showNewFolderInput, setShowNewFolderInput] = useState(false);
   const [message, setMessage] = useState("");
@@ -27,9 +28,10 @@ export default function FileBrowser() {
     if (!token) return;
     setMessage("Fetching files...");
     try {
-      // const files = await api.getFileList(currentFolder, token);
+      //const allFiles = await api.getFileList(currentFolder, token);
 
       const allFiles = await getFileListTest(currentFolder, token);
+
       console.info(allFiles);
       setPathNodes(allFiles);
       setMessage("");
@@ -141,12 +143,6 @@ export default function FileBrowser() {
       console.error(err);
       setErrorMessage("File upload failed.");
     }
-  };
-
-  const goUp = () => {
-    if (currentFolder === "/") return;
-    const parent = currentFolder.split("/").slice(0, -2).join("/") + "/";
-    setCurrentFolder(parent || "/");
   };
 
   return (

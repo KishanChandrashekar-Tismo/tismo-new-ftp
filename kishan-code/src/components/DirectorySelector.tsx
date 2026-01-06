@@ -16,7 +16,7 @@ export default function DirectorySelector() {
     const fetchClientName = async () => {
       if (!token) return;
       try {
-        // const files = await getFileList("/", token);
+        //const files = await getFileList("/", token);
         // // Find the first folder (or any folder you want to use as clientName)
         // const folder = files.find((item) => item.isFolder);
         // if (folder && folder.name) {
@@ -36,7 +36,7 @@ export default function DirectorySelector() {
       }
     };
     fetchClientName();
-  }, [token]);
+  }, [token, selected]);
 
   // Update currentFolder when selected changes
   useEffect(() => {

@@ -16,6 +16,42 @@
   padding-bottom: 12px;
 }
 
+.sortable-header {
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sortable-header:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.sort-icon {
+  margin-left: 8px;
+  font-size: 14px;
+  font-weight: bold;
+  min-width: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sort-icon-none {
+  color: #ccc;
+  opacity: 0.6;
+}
+
+.sort-icon-asc {
+  color: #3b82f6;
+}
+
+.sort-icon-desc {
+  color: #3b82f6;
+}
+
 .table thead th:nth-child(1) {
   width: 50%; /* Name column gets more space */
 }
@@ -81,6 +117,28 @@
 
 .file-row:hover {
   background-color: rgba(255, 255, 255, 0.2);
+}
+
+.file-row.folder-row {
+  cursor: pointer;
+}
+
+.file-row.folder-row:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+.file-row.selected {
+  background-color: rgba(59, 130, 246, 0.3); /* Blue selection background */
+  border-left: 3px solid #3b82f6; /* Blue left border indicator */
+}
+
+.file-row.selected:hover {
+  background-color: rgba(
+    59,
+    130,
+    246,
+    0.4
+  ); /* Slightly darker on hover when selected */
 }
 
 .file-icon {
